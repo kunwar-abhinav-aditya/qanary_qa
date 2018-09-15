@@ -1,0 +1,1 @@
+which river flows through Seoul  Answer: [http://dbpedia.org/ontology/River]

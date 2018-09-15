@@ -1,0 +1,3 @@
+who is the wife of barack obama? Answer: [{"begin":19,"end":30,"link":"http://dbpedia.org/resource/Barack_Obama"}]
+Count the number teams which have  former ice hockey players which also included American Hockey League ? Answer: [{"begin":90,"end":102,"link":""}]
+Members of how many political parties have died in Delhi ? Answer: [{"begin":51,"end":55,"link":"http://dbpedia.org/resource/National Capital Region (India)"}]
