@@ -213,7 +213,7 @@ public class SINA extends QanaryComponent {
 					+ "BIND (IRI(str(RAND())) AS ?b) ." + "BIND (now() as ?time) " + "}";
 			//myQanaryUtils.updateTripleStore(sparql);
 
-			if (parts[0] != "") {
+			if (parts[parts.length-1] != "") {
 				sparql = "PREFIX qa: <http://www.wdaqua.eu/qa#> " //
 						+ "PREFIX oa: <http://www.w3.org/ns/openannotation/core/> " //
 						+ "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> " //
@@ -221,7 +221,7 @@ public class SINA extends QanaryComponent {
 						+ "GRAPH <" + myQanaryUtils.getInGraph() + "> { " //
 						+ "  ?a a qa:AnnotationOfAnswerSPARQL . " //
 						+ "  ?a oa:hasTarget <URIAnswer> . " //
-						+ "  ?a oa:hasBody \"" + parts[0].replaceAll("\n", " ") + "\" ;" //
+						+ "  ?a oa:hasBody \"" + parts[parts.length-1].replaceAll("\n", " ") + "\" ;" //
 						+ "     oa:annotatedBy <urn:qanary:geosparqlgenerator> ; " //
 						+ "	    oa:AnnotatedAt ?time . " //
 						+ "}} " //
@@ -231,7 +231,7 @@ public class SINA extends QanaryComponent {
 						+ "}";
 				myQanaryUtils.updateTripleStore(sparql);
 				
-				Query query = QueryFactory.create(parts[0]);
+				Query query = QueryFactory.create(parts[parts.length-1]);
 				QueryExecution exec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query);
 				ResultSet results = ResultSetFactory.copyResults(exec.execSelect());
 				ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
